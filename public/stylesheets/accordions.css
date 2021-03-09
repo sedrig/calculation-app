@@ -1,0 +1,469 @@
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+/*--------------------*/
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.accordion {
+    padding-bottom: 1em;
+}
+
+.accordion__row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.accordion-edit__row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.accordion__edit {
+    margin-right: 1em;
+}
+.accordion__edit a,
+.accordion_delete a {
+    transition: 0.1s;
+}
+.accordion__service
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion__edit
+    a,
+.accordion__service
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion_delete
+    a {
+    color: #03503c;
+}
+
+.accordion__service
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion__edit
+    a:hover,
+.accordion__service
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion_delete
+    a:hover {
+    color: #01271d;
+    font-size: 0.8rem;
+}
+
+.accordion__subtype
+    > .accordion__label
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion__edit
+    a,
+.accordion__subtype
+    > .accordion__label
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion_delete
+    a,
+.accordion__type
+    > .accordion__label
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion__edit
+    a,
+.accordion__type
+    > .accordion__label
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion_delete
+    a {
+    color: #ffffff;
+}
+
+.accordion__subtype
+    > .accordion__label
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion__edit
+    a:hover,
+.accordion__subtype
+    > .accordion__label
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion_delete
+    a:hover {
+    color: #ffffff;
+    font-size: 0.8rem;
+}
+
+.accordion__type
+    > .accordion__label
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion__edit
+    a:hover,
+.accordion__type
+    > .accordion__label
+    > .accordion-edit__row
+    > .accordion-edit__group
+    > .accordion-edit__row
+    > .accordion_delete
+    a:hover {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.accordion__type {
+}
+.accordion__input {
+    display: none;
+}
+.accordion__label {
+    display: block;
+    position: relative;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    background-color: #01a18e;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+.accordion__label:after {
+    content: "+";
+    position: absolute;
+    display: block;
+    left: 0.75em;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: white;
+}
+.accordion__input:checked + .accordion__label:after {
+    transform: translate(0, -50%) rotate(45deg);
+}
+.accordion__input:checked + .accordion__label,
+.accordion__label:hover {
+    background-color: #02665b;
+}
+.accordion__input:checked + .accordion__label {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.accordion__sum-for-type {
+    display: none;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-weight: 700;
+    text-align: right;
+    background-color: #7eb3ac;
+    color: white;
+}
+.accordion__input:checked ~ .accordion__sum-for-type {
+    display: block;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.accordion__subtype {
+    display: none;
+}
+.accordion__input:checked ~ .accordion__subtype {
+    display: block;
+}
+.accordion__subtype .accordion__label {
+    background-color: #7eb3ac;
+    padding: 0.25rem 0.5rem 0.25rem 2.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+    border-bottom: 1px solid #abd6d0;
+}
+.accordion__subtype .accordion__input:checked + .accordion__label {
+    background-color: #7eb3ac;
+    border-radius: 0;
+    border: none;
+}
+.accordion__subtype-name {
+    flex: 0 0 55.555%;
+}
+.accordion-edit__subtype-name {
+}
+.accordion__group {
+    flex: 0 0 44.444%;
+}
+
+.accordion__price,
+.accordion__count,
+.accordion_sum {
+    display: none;
+    flex: 0 0 33.333%;
+}
+.accordion_sum {
+    text-align: center;
+}
+.accordion__sum-subtype {
+    display: block;
+    padding-right: 0.75em;
+    padding-left: 15px;
+    flex: 0 0 100%;
+    text-align: right;
+}
+
+.accordion__subtype
+    > .accordion__input:checked
+    + .accordion__label
+    > .accordion__row
+    > .accordion__group
+    > .accordion__row
+    > .accordion__price,
+.accordion__subtype
+    > .accordion__input:checked
+    + .accordion__label
+    > .accordion__row
+    > .accordion__group
+    > .accordion__row
+    > .accordion__count,
+.accordion__subtype
+    > .accordion__input:checked
+    + .accordion__label
+    > .accordion__row
+    > .accordion__group
+    > .accordion__row
+    > .accordion_sum {
+    display: block;
+}
+
+.accordion__sum-for-subtype {
+    display: none;
+    border: 1px solid #7eb3ac;
+    border-bottom: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.5em 1.25em;
+    font-weight: 700;
+    text-align: right;
+}
+.accordion__subtype .accordion__input:checked ~ .accordion__sum-for-subtype {
+    display: block;
+}
+.accordion__subtype
+    .accordion__input:checked
+    + .accordion__label
+    > .accordion__row
+    > .accordion__group
+    > .accordion__row
+    > .accordion__sum-subtype {
+    display: none;
+}
+
+.accordion__service {
+    display: none;
+    position: relative;
+    border: 1px solid #7eb3ac;
+    border-bottom: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.25rem 0.5rem 0.25rem 2.5rem;
+}
+.accordion__service:last-child {
+    border: 1px solid #7eb3ac;
+}
+.accordion__subtype .accordion__input:checked ~ .accordion__service {
+    display: block;
+}
+.accordion__service-name {
+    position: relative;
+    flex: 0 0 55.555%;
+}
+.accordion__service-name span {
+    font-weight: 700;
+    position: absolute;
+    display: block;
+    left: -1.75em;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.accordion-edit__service-name {
+    position: relative;
+}
+.accordion-edit__service-name span {
+    font-weight: 700;
+    position: absolute;
+    display: block;
+    left: -1.75em;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.accordion__price-input,
+.accordion__count-input,
+.accordion_sum-input {
+    flex: 0 0 33.333%;
+}
+
+.accordion_sum-input {
+    text-align: center;
+    word-break: break-word;
+}
+
+.accordion__price-input input,
+.accordion__count-input input {
+    padding: 0 5px;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    line-height: 1.4;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    width: 100%;
+    max-width: 70px;
+}
+
+.visible {
+    display: none;
+}
+
+/*===================================*/
+/*==========ADAPTATION==========*/
+/*===================================*/
+
+@media (max-width: 768px) {
+    .accordion__row {
+        flex-wrap: wrap;
+    }
+    .accordion__service-name,
+    .accordion__group {
+        flex: 0 0 100%;
+    }
+    .accordion__price-input,
+    .accordion__count-input {
+        flex: 0 0 25%;
+    }
+    .accordion_sum-input {
+        flex: 0 0 50%;
+    }
+    .accordion__service-name {
+        margin-bottom: 0.2rem;
+    }
+    .accordion__subtype
+        > .accordion__input:checked
+        + .accordion__label
+        > .accordion__row
+        > .accordion__group
+        > .accordion__row
+        > .accordion__price,
+    .accordion__subtype
+        > .accordion__input:checked
+        + .accordion__label
+        > .accordion__row
+        > .accordion__group
+        > .accordion__row
+        > .accordion__count,
+    .accordion__subtype
+        > .accordion__input:checked
+        + .accordion__label
+        > .accordion__row
+        > .accordion__group
+        > .accordion__row
+        > .accordion_sum {
+        display: none;
+    }
+    .visible {
+        display: inline;
+    }
+}
+
+@media (max-width: 530px) {
+    .accordion__price-input,
+    .accordion__count-input {
+        flex: 0 0 33.333%;
+    }
+    .accordion_sum-input {
+        flex: 0 0 33.333%;
+    }
+}

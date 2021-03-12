@@ -217,8 +217,12 @@ class MainController extends Controller
                     ->first();
                 if ($servi->deleted_at != null) {
                     $k = 0;
+                    $l = 0;
+                    $controll = 0;
+                    $controll_calc = 0;
+                    $types = Type::withTrashed()->get();
                     $service = Service::withTrashed()->get();
-                    return view('another', compact('service', 'calc', 'k', 'sobaka'));
+                    return view('another', compact('service', 'calc', 'k', 'sobaka', 'types', 'controll', 'l', 'controll_calc'));
                     //break;
                 } else {
                     $families = Family::get();

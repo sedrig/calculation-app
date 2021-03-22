@@ -195,16 +195,6 @@ class MainController extends Controller
 
     public function index_show($index)
     {
-        /*$flights = Service::withTrashed()
-            ->get();
-
-        dump($flights);*/
-
-        //dump($order->services()->withTrashed());
-        /*$min = Service::get();
-        min()->withTrashed();*/
-
-        /*dd('123');*/
         $sos = Calc::get()->where('id', '=', $index);
 
 
@@ -224,21 +214,14 @@ class MainController extends Controller
                     $service = Service::withTrashed()->get();
                     return view('another', compact('service', 'calc', 'k', 'sobaka', 'types', 'controll', 'l', 'controll_calc'));
                     //break;
-                } else {
-                    $families = Family::get();
-                    $types = Type::get();
-
-                    return view('index', compact('families', 'types',  'sobaka'));
                 }
             }
-            dd('123');
+            $families = Family::get();
+            $types = Type::get();
+
+            return view('index', compact('families', 'types',  'sobaka'));
+            //dd('123');
         }
-
-        // dump($sobaka);
-        dd('123');
-        //dd($sobaka);
-
-
     }
 
     public function see_home(Request $request)

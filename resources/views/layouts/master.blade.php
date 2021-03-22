@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('stylesheets/public.css') }}">
     <link rel="stylesheet" href="{{ asset('stylesheets/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('stylesheets/accordions.css') }}">
-    <title>Водкодавы</title>
+    <title>Cucumbers</title>
 </head>
 
 <body>

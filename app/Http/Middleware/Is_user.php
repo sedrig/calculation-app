@@ -17,11 +17,9 @@ class Is_user
      */
     public function handle(Request $request, Closure $next)
     {
-        $is_user = DB::table('users')
-            ->where('is_admin', 0)
-            ->first();
-
-        if ($is_user->id == session('LoggedUser'))
-            return $next($request);
+        if (!session()->has('LoggedUser')) {
+            return redirect()->route('login');
+        }
+        return $next($request);
     }
 }

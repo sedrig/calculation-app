@@ -10,6 +10,10 @@ use App\Models\Calculation;
 use App\Models\Family;
 use App\Models\Service;
 use App\Models\Type;
+use Dompdf\Dompdf;
+//use Barryvdh\DomPDF\PDF;
+//use Barryvdh\DomPDF\Facade as PDF;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -193,8 +197,13 @@ class MainController extends Controller
         }
     }
 
-    public function index_show($index)
+    public function index_show($index, $coll = null)
     {
+
+
+
+
+
         $sos = Calc::get()->where('id', '=', $index);
 
 
@@ -212,7 +221,38 @@ class MainController extends Controller
                     $controll_calc = 0;
                     $types = Type::withTrashed()->get();
                     $service = Service::withTrashed()->get();
-                    return view('another', compact('service', 'calc', 'k', 'sobaka', 'types', 'controll', 'l', 'controll_calc'));
+
+
+                    if ($coll != null) {
+                        view()->share([
+
+                            'service' => $service,
+                            'calc' => $calc,
+                            'k' => $k,
+                            'sobaka' => $sobaka,
+                            'types' => $types,
+                            'controll' => $controll,
+                            'l' => $l,
+                            'controll_calc' => $controll_calc
+
+
+
+                        ]);
+
+                        $dom_pdf = PDF::loadView('1');
+
+
+
+                        //dd($pdf_doc);
+
+                        return $dom_pdf->download('pdf.pdf');
+                    } else {
+                        return view('another', compact('service', 'calc', 'k', 'sobaka', 'types', 'controll', 'l', 'controll_calc', 'index'));
+                    }
+
+
+
+
                     //break;
                 }
             }
@@ -224,17 +264,54 @@ class MainController extends Controller
         }
     }
 
-    public function see_home(Request $request)
+
+
+    public function see_home(Request $request, $index = "0")
     {
 
 
-        $types = Type::get();
-        $service = Service::get();
+        if ($index == 1) {
 
-        $k = 0;
-        $l = 0;
-        $controll = 0;
+            $types = Type::get();
+            $service = Service::get();
 
-        return view('test', compact('request', 'service', 'types', 'k', 'l', 'controll'));
+            $k = 0;
+            $l = 0;
+            $controll = 0;
+            // dd($request->comment);
+            view()->share([
+                'request' => $request,
+                'service' => $service,
+                'types' => $types,
+                'k' => $k,
+                'l' => $l,
+                'controll' => $controll
+
+            ]);
+
+            // $pdf_doc = PDF::loadView('test_download');
+
+            // $dom_pdf = new Dompdf();
+
+            //$dom_pdf->set_option('defaultFont', 'dejavu sans');
+            $dom_pdf = PDF::loadView('test_download');
+
+
+
+            //dd($pdf_doc);
+
+            return $dom_pdf->download('pdf.pdf');
+
+            //dd('скачати');
+        } else {
+            $types = Type::get();
+            $service = Service::get();
+
+            $k = 0;
+            $l = 0;
+            $controll = 0;
+
+            return view('test', compact('request', 'service', 'types', 'k', 'l', 'controll'));
+        }
     }
 }

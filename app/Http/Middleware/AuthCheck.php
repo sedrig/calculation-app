@@ -16,7 +16,7 @@ class AuthCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!(session()->has('LoggedUser')) || (session()->has('LoggedAdmin'))) {
+        if (!(session()->has('LoggedUser')) && !(session()->has('LoggedAdmin'))) {
             return redirect('login');
         }
         return $next($request);

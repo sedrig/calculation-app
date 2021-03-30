@@ -39,7 +39,7 @@ body {
 input,
 button,
 textarea {
-    font-family: inherit;
+    font-family: DejaVu Sans;
 }
 input::-ms-clear {
     display: none;
@@ -70,14 +70,14 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: inherit;
-    font-weight: inherit;
+    font-size: DejaVu Sans;
+    font-weight: DejaVu Sans;
 }
 /*--------------------*/
 body {
-    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-        "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        DejaVu Sans, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .wrapper {
     min-height: 100vh;

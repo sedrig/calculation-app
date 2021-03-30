@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            font-family: DejaVu Sans !important;
+        }
+
+    </style>
     <link rel="stylesheet" href="stylesheets/public.css">
     <title>Document</title>
 </head>
@@ -93,8 +99,6 @@
             </tbody>
         </table>
     </div>
-
-    <a href="{{ route('home_return', ['id' => $index, 'col' => 1]) }}">Зберегти pdf</a>
 </body>
 
 </html>

@@ -1,13 +1,19 @@
 @extends('layouts.master')
+
+@section('general')
+    Головна&nbsp /
+@endsection
+
+@section('name')
+    Калькулятор
+@endsection
+
+
 @section('content')
 
-    <main>
-        <div class="content container">
-            <!-- nav-history -->
-            <ul class="content__item nav-history">
-                <li class="nav-history__item"><a href="#">Головна</a></li>
-                <li class="nav-history__item nav-history__item_before">Калькулятор</li>
-            </ul>
+
+        <div class="content">
+
             <!-- warning -->
             @if (!session()->has('LoggedUser') && !session()->has('LoggedAdmin'))
                 <div class="content__item warning">
@@ -93,20 +99,20 @@
                                 </div>
                                 </div>
                                 </label>
-                                <?php $count = 1; ?> 
+                                <?php $count = 1; ?>
                                 @foreach ($types as $type)
                                 @if ($tok->id == $type->id)
-                                
-                                    
-                                    
 
-                                @foreach ($type->services as $service)    
-                            
+
+
+
+                                @foreach ($type->services as $service)
+
                                 <div class="accordion__service">
                                 <div class="accordion__row">
                                 <div class="accordion__service-name"><span>{{ $count++ }}  </span>{{ $service->name }}</div>
                                 <div class="accordion__group">
-                                <div class="accordion__row">   
+                                <div class="accordion__row">
                                 <div class="accordion__price-input"><input class="price" type="text" name="name[{{ $service->id }}]"  value=" @isset($sobaka) @if ($type->last($service->id, $sobaka) == 0) {{ $service->price }} @else {{ $type->last($service->id, $sobaka) }} @endif @else{{ $service->price }} @endisset  "  > грн</div>
                                 <div class="accordion__count-input"><input class="count" type="text" name="units[{{ $service->id }}]" value="@isset($sobaka) @if ($type->last_next($service->id, $sobaka) == 0) @else {{ $type->last_next($service->id, $sobaka) }} @endif @else @endisset "> {{ $service->unit }}</div>
                                 <!--<div class=""><input class="" type="hidden" name="type[{{ $service->id }}]" value="{{ $service->type_id }}"> </div>-->
@@ -115,11 +121,11 @@
                                 </div>
                                 </div>
                                 </div>
-                                
-                                
-                                
+
+
+
                                     @endforeach
-                                
+
 
                             @endif
                             @endforeach
@@ -142,22 +148,22 @@
 
                             </div>
                             @endforeach
-                            
+
                             @if (session()->has('LoggedUser') || session()->has('LoggedAdmin'))
                             <div class="form-calc__button">
                             <button type="submit" formaction="{{ route('save_home') }}"><i class="fa fa-floppy-o" aria-hidden="true"></i>Зберегти</button>
                             <button type="submit" formaction="{{ route('see_home') }}"><i class="fa fa-eye" aria-hidden="true"></i>Переглянути</button>
 
                             <button type="submit" formaction="{{ route('see_home', 1) }}"><i class="fa fa-eye" aria-hidden="true"></i>Зберегти у pdf</button>
-                            
-                            </div> 
+
+                            </div>
                             @endif
 
 
                             </form>
                             </div>
                             </div>
-                            </main>
+
 
 
 @endsection

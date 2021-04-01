@@ -19,7 +19,7 @@
                 <!-- nav img -->
                 <div class="nav__img">
                     <img src="{{ asset('images/cucumbers.jpg') }}" alt="">
-                    <a href="{{ route('home') }}"></a>
+                    <a href="{{ route('general') }}"></a>
                 </div>
                 <!-- nav column -->
                 <ul class="nav__column">
@@ -50,14 +50,28 @@
                     @endif
 
                 </ul>
+
             </nav>
+            <!-- nav-history -->
+
         </header>
+        <main>
+
+
+        <div class="container">
+            <ul class="content__item nav-history">
+                <li class="nav-history__item"><a href="{{route('general')}}">@yield('general')</a></li>
+                <li class="nav-history__item ">&nbsp @yield('name')</li>
+            </ul>
+
 
         @yield('content')
 
         @section('footer')
 
         @endsection
+        </div>
+        </main>
         <footer>
             <div class="copyright container">Copyright <?= date('Y') ?>, Cucumbers Calculator</div>
 </footer>

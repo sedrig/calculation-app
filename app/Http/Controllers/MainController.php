@@ -50,7 +50,7 @@ class MainController extends Controller
                 'password' => Hash::make($request->password),
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
-            ], true);
+            ]);
         if ($query) {
             return redirect('login');
         } else {

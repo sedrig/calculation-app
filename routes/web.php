@@ -20,8 +20,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', [MainController::class, 'index'])->name('home');
+Route::get('/',function (){
+    return view('general');
+})->name('general');
+Route::get('/general', [MainController::class, 'index'])->name('home');
 
 
 

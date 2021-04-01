@@ -12,8 +12,6 @@ class Type extends Model
 
     use SoftDeletes;
 
-
-
     public function services()
     {
         return $this->hasMany(Service::class);

@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <main>
-        <div class="content container">
+
+        <div class="content">
             <div class="content__item title">Вхід на сайт</div>
             <div class="content__row justify-content-center">
                 <div class="sign-in">
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-    </main>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 

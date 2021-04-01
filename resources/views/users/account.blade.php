@@ -1,13 +1,16 @@
 @extends('layouts.master')
+@section('general')
+    Головна&nbsp /
+@endsection
 
+@section('name')
+    Профіль
+@endsection
 @section('content')
-    <main>
-        <div class="container">
+
+
             <div class="account">
-                <ul class="account__history nav-history">
-                    <li class="nav-history__item"><a href="#">Головна</a></li>
-                    <li class="nav-history__item nav-history__item_before">Профіль</li>
-                </ul>
+
                 <div class="account__row">
                     @isset($dot)
                         <div class="account__section" style="display: display;">
@@ -101,7 +104,7 @@
                     @endisset
                     <div class="account__menu">
                         <div class="menu">
-                            <a class="menu__item @isset($return)menu_active @endisset" href=""><i class="fa fa-calculator"
+                            <a class="menu__item @isset($return)menu_active @endisset" href="{{route('home')}}"><i class="fa fa-calculator"
                                     aria-hidden="true"></i>Калькулятор</a>
                             <a class="menu__item @isset($dot)menu_active @endisset" href="{{ route('settings') }}"><i
                                     class="fa fa-cog" aria-hidden="true"></i>Налаштування
@@ -113,8 +116,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 

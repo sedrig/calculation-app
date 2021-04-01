@@ -805,3 +805,56 @@ footer {
     background-color: #7eb3ac;
     border: 1px solid #bbb;
 }
+.block {
+    text-align: center;
+    padding: 24px 0;
+    background-color: rgba(1, 161, 142, 0.1);
+}
+.button {
+    display: inline-block;
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    color: #fff;
+    background-color: #01a18e;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+    text-shadow: 1px 1px 0 rgba(0,0,0,.1);
+    text-align: center;
+    vertical-align: middle;
+    transition: .2s ease;
+}
+.button:hover {
+    background-color: #02665b;
+}
+.button > i {
+    margin-right: .5em;
+}
+
+.page__title {
+    font-size: 1.6rem;
+}
+.page__title_mt3 {
+    margin-top: 3rem;
+}
+.page__title_mb {
+    margin-bottom: .5rem;
+}
+
+.page__subtitle {
+    font-weight: normal;
+    line-height: 1.5;
+    font-size: 1.6rem;
+}
+.page__subtitle_mb {
+    margin-bottom: .5rem;
+}
+
+.page__text > p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #252525;
+    text-align: left;
+    margin-bottom: 1rem;
+}

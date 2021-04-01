@@ -1,8 +1,15 @@
 @extends('layouts.master')
 
+@section('general')
+    Головна&nbsp /
+@endsection
+
+@section('name')
+    Адмінпанель
+@endsection
+
 @section('content')
-    <main>
-        <div class="container">
+
             <div class="ap">
                 <div class="ap__row">
 
@@ -398,7 +405,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+
 
 @endsection

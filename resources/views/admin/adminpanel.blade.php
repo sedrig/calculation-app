@@ -392,7 +392,7 @@
 
             <div class="ap__menu">
                 <div class="menu">
-                    <a class="menu__item @isset($first)menu_active @endisset href=" {{ route('edit_service') }}"><i
+                    <a class="menu__item @isset($first)menu_active @endisset" href=" {{ route('edit_service') }}"><i
                             class="fa fa-calculator" aria-hidden="true"></i>Калькулятор</a>
                     <a class="menu__item @isset($second)menu_active @endisset" href="{{ route('admin') }}"><i
                             class="fa fa-cog" aria-hidden="true"></i>Налаштування каталогу</a>

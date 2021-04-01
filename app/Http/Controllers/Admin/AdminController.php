@@ -13,11 +13,11 @@ class AdminController extends Controller
 {
     public function update()
     {
-
+        $first = true;
         $families = Family::get();
         $types = Type::get();
         $controllers = 1;
-        return view('admin.adminpanel', compact('families', 'types', 'controllers'));
+        return view('admin.adminpanel', compact('families', 'types', 'controllers', 'first'));
     }
 
     public function service_destroy($id)

@@ -88,10 +88,11 @@ class MainController extends Controller
 
     public function adminpanel()
     {
+        $second = true;
         $verify = 1;
         $types = Type::get();
         $families = Family::get();
-        return view('admin.adminpanel', compact('types', 'families', 'verify'));
+        return view('admin.adminpanel', compact('types', 'families', 'verify', 'second'));
     }
 
     public function user()

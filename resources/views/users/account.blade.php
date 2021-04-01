@@ -104,7 +104,7 @@
                     @endisset
                     <div class="account__menu">
                         <div class="menu">
-                            <a class="menu__item @isset($return)menu_active @endisset" href="{{route('home')}}"><i class="fa fa-calculator"
+                            <a class="menu__item @isset($return)menu_active @endisset" href="{{route('profile')}}"><i class="fa fa-calculator"
                                     aria-hidden="true"></i>Калькулятор</a>
                             <a class="menu__item @isset($dot)menu_active @endisset" href="{{ route('settings') }}"><i
                                     class="fa fa-cog" aria-hidden="true"></i>Налаштування

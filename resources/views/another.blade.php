@@ -94,7 +94,7 @@
         </table>
     </div>
 
-    <a href="{{ route('home_return', ['id' => $index, 'col' => 1]) }}">Зберегти pdf</a>
+   
 </body>
 
 </html>
